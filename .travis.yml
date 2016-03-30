@@ -1,3 +1,4 @@
 language: java
 before_script: 
- - chmod a+x ./gradlew
+ - chmod 777 gradlew
+ - chmod 777 ./gradlew
