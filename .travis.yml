@@ -1,4 +1,3 @@
 language: java
-before_script: 
- - chmod 777 gradlew
- - chmod 777 ./gradlew
+before_install:
+ - chmod +x gradlew
