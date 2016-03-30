@@ -1,4 +1,4 @@
-# CSE360 Team Assignment 
+# CSE360 Team Assignment ![Build Status](https://travis-ci.org/jcrupp/CSE360_Team10_TeamAssignment.svg?branch=master) 
 
 ##Team 10 Members: 
 
