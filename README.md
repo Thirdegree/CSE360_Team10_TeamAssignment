@@ -45,6 +45,7 @@ If a player lands on “race fuel” they will move an extra number of steps.
 Link: https://docs.google.com/a/asu.edu/spreadsheets/d/1HuTCLjJEjHdqqTgWA3GmQdcwhZtM5eMae-vg09oHKq4/edit?usp=sharing
 ##Use Case Diagram
 ![alt tag](http://i.imgur.com/nsR5XP8.png?1)
+Link: https://www.lucidchart.com/invitations/accept/a891d465-b9db-448e-831c-2a25d2916441
     
 ##Product Backlog and Sprints
 We are using huboard which generates a product backlog and sprint information using GitHub labels.  This allows us to manage these documentations along side our repository.  To view the backlog and sprint in board format please use the following link: [Team 10 Backlog and Sprints](https://huboard.com/jcrupp/CSE360_Team10_TeamAssignment)
