@@ -42,9 +42,12 @@ If a player lands on “race fuel” they will move an extra number of steps.
 
 ##User Stories 
 ![alt tag](http://i.imgur.com/BNSdeM4.png)
+
 Link: https://docs.google.com/a/asu.edu/spreadsheets/d/1HuTCLjJEjHdqqTgWA3GmQdcwhZtM5eMae-vg09oHKq4/edit?usp=sharing
+
 ##Use Case Diagram
 ![alt tag](http://i.imgur.com/nsR5XP8.png?1)
+
 Link: https://www.lucidchart.com/invitations/accept/a891d465-b9db-448e-831c-2a25d2916441
     
 ##Product Backlog and Sprints
