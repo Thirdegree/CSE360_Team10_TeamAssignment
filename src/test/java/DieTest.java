@@ -25,15 +25,36 @@ public class DieTest {
 		assertEquals(6, numSides); 
 	}
 	
+	
+	
 	/**
 	 * Tests the creation of a Die using a constructor that allows for the number of sides to be set.
 	 */
+	@Test(expected=IllegalArgumentException.class)
+	public void testNonGenericDieInvalidNumberOfSides(){
+		Die die = new Die(2); 
+	}
+	
+	/**
+	 * Tests the creation of a Die with a specific number of sides.
+	 */
 	@Test
-	public void testNonGenericDie(){
-		Die die = new Die(16); 
+	public void testNonGenericDieBoundaryNumberOfSides(){
+		Die die = new Die(3); 
 		int numSides = die.getNumberOfSides(); 
 		
-		assertEquals(16, numSides);
+		assertEquals(3, numSides);
+	}
+	
+	/**
+	 * Tests the creation of a Die with a specific number of sides.
+	 */
+	@Test
+	public void testNonGenericDieValidNumberOfSides(){
+		Die die = new Die(4); 
+		int numSides = die.getNumberOfSides(); 
+		
+		assertEquals(4, numSides);
 	}
 	
 	
@@ -42,7 +63,7 @@ public class DieTest {
 		Die die = new Die(); 
 		int rollValue = die.roll();
 		
-		assertTrue(1 <= rollValue && rollValue <= 6);
+		assertTrue((1 <= rollValue) && (rollValue <= 6));
 	}
 	
 	@Test
@@ -51,7 +72,7 @@ public class DieTest {
 		Die die = new Die(numSides); 
 		int rollValue = die.roll();
 		
-		assertTrue(1 <= rollValue && rollValue <= numSides);
+		assertTrue((1 <= rollValue) && (rollValue <= numSides));
 	}
 	
 

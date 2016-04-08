@@ -1,8 +1,5 @@
 import java.util.Random;
 
-/**
- * 
- */
 
 /**
  * @author jcrupp
@@ -21,10 +18,15 @@ public class Die {
 		numberOfSides = 6;
 	}
 	/**
-	 * sets up a customized die with a specific number of sides.
+	 * sets up a customized die with a specific number of sides
+	 * that is greater than or equal 3.
 	 * @param numSides is the number of die sides.
+	 * @throws IllegalArgumentException 
 	 */
-	public Die(int numSides) {
+	public Die(int numSides) throws IllegalArgumentException{
+		if (numSides < 3){
+			throw new IllegalArgumentException();
+		}
 		numberOfSides = numSides;
 	}
 
