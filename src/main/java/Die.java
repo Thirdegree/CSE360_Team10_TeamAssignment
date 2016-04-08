@@ -8,20 +8,29 @@
  */
 public class Die {
 
+	
+	private int numberOfSides; 
+	
+	
 	/**
-	 * 
+	 * Sets up a normal every day die with 6 sides.
 	 */
 	public Die() {
-		// TODO Auto-generated constructor stub
+		numberOfSides = 6;
 	}
-
+	/**
+	 * sets up a customized die with a specific number of sides.
+	 * @param numSides is the number of die sides.
+	 */
 	public Die(int numSides) {
-		// TODO Auto-generated constructor stub
+		numberOfSides = numSides;
 	}
 
+	/**
+	 * Gets the die's number of sides
+	 */
 	public int getNumberOfSides() {
-		// TODO Auto-generated method stub
-		return 0;
+		return numberOfSides;
 	}
 
 }
