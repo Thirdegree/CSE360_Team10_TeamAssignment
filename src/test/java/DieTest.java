@@ -37,5 +37,22 @@ public class DieTest {
 	}
 	
 	
+	@Test
+	public void testRollWithDefaultDie(){
+		Die die = new Die(); 
+		int rollValue = die.roll();
+		
+		assertTrue(1 <= rollValue && rollValue <= 6);
+	}
+	
+	@Test
+	public void testRollWithNonGenericDie(){
+		int numSides = 16;
+		Die die = new Die(numSides); 
+		int rollValue = die.roll();
+		
+		assertTrue(1 <= rollValue && rollValue <= numSides);
+	}
+	
 
 }

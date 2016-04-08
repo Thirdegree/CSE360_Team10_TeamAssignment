@@ -1,3 +1,5 @@
+import java.util.Random;
+
 /**
  * 
  */
@@ -32,5 +34,11 @@ public class Die {
 	public int getNumberOfSides() {
 		return numberOfSides;
 	}
+	public int roll() {
+		Random rand = new Random(); 
+		
+		return rand.nextInt(numberOfSides) + 1;
+	}
+
 
 }
