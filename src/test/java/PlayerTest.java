@@ -2,7 +2,7 @@ import static org.junit.Assert.*;
 
 import org.junit.*;
 
-import Car.Car;
+import car.Car;
 
 public class PlayerTest {
 
