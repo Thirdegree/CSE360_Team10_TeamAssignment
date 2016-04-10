@@ -1,6 +1,6 @@
-package Car;
+package exaust;
 
-public abstract class Exaust {
+public class Exaust {
 	private int quality;
 	
 	public int getQuality() {

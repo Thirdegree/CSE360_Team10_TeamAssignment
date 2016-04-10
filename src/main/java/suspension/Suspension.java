@@ -1,6 +1,6 @@
-package Car;
+package suspension;
 
-public abstract class Turbo {
+public class Suspension {
 	private int quality;
 	
 	public int getQuality() {

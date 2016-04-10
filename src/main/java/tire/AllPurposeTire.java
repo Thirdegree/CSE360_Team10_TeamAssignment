@@ -1,4 +1,4 @@
-package Car;
+package tire;
 
 public class AllPurposeTire extends Tire {
 	private int speed = 3;

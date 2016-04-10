@@ -1,6 +1,6 @@
-package Car;
+package tire;
 
-public abstract class Tire {
+public class Tire {
 	private int speed;
 	private int durability;
 	

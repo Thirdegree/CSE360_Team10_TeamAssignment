@@ -1,15 +1,29 @@
-package Car;
+package car;
+
+import java.awt.Color;
+
+import engine.*;
+import exaust.*;
+import suspension.*;
+import tire.*;
+import turbo.*;
+
 /**
  * 
  * @author Joel Christiansen
  *
  */
 public class Car {
+	//have an impact on gameplay
 	private Tire tire;
 	private Turbo turbo;
 	private Suspension sus;
 	private Engine engine;
 	private Exaust exaust;
+	// cosmetics? or flavor at least.
+	private Color color;
+	private String make;
+	private String model;
 	
 
 	public Car() { 
