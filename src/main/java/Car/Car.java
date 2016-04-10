@@ -36,6 +36,7 @@ public class Car {
 	public void upgradeExaust(Exaust newExaust) {
 		exaust = newExaust;
 	}
+
 	
 	public Tire getTire() {
 		return tire;
