@@ -24,6 +24,7 @@ public class Car {
 	private Color color;
 	private String make;
 	private String model;
+	private int position = 0;
 	
 
 	public Car() { 
@@ -75,5 +76,8 @@ public class Car {
 	public int getDurabilityModifier() {
 		//TODO: FIGURE OUT HOW WE WANT TO DO THIS
 		return 1;
+	}
+	public int getPosition() {
+		return position;
 	}
 }
