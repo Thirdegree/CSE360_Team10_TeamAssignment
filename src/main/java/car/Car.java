@@ -76,9 +76,6 @@ public class Car {
 		//TODO: FIGURE OUT HOW WE WANT TO DO THIS
 		return 1;
 	}
-	public int getPosition() {
-		return position;
-	}
 
 	public Color getColor() {
 		return color;
