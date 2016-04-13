@@ -8,10 +8,10 @@ public class Track {
 	private double disasters = 0.05;
 	private double blessings = 0.05;
 	
-	public float getDisasters() {
+	public double getDisasters() {
 		return disasters;
 	}
-	public float getBlessings() {
+	public double getBlessings() {
 		return blessings;
 	}
 }
