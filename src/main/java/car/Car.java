@@ -80,4 +80,23 @@ public class Car {
 	public int getPosition() {
 		return position;
 	}
+
+	public Color getColor() {
+		return color;
+	}
+	public String getMake() {
+		return make;
+	}
+	public String getModel() {
+		return model;
+	}
+	public void setColor(Color color) {
+		this.color = color;
+	}
+	public void setMake(String make) {
+		this.make = make;
+	}
+	public void setModel(String model) {
+		this.model = model;
+	}
 }
