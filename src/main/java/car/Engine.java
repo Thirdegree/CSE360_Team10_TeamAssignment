@@ -7,6 +7,6 @@ public class Engine extends CarPart{
 	}
 
 	public double getSpeedModifier() {
-		return quality * 0.15;
+		return quality * 0.20;
 	}
 }

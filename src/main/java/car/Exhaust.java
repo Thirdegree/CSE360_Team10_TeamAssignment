@@ -7,7 +7,6 @@ public class Exhaust extends CarPart{
 	}
 	
 	public double getSpeedModifier() {
-		return quality * 0.1;
+		return quality * 0.15;
 	}
-
 }

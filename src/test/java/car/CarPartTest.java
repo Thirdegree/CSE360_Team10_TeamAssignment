@@ -16,6 +16,29 @@ public class CarPartTest {
 	}
 	
 	@Test
+	public void testCanUpgradeWithNoUpgrades(){
+		CarPart carPart = new CarPart(); 
+		boolean canUpgradeResult = carPart.canUpgrade();
+		
+		assertTrue(canUpgradeResult);
+	}
+	
+	@Test
+	public void testCanUpgradeWithMaxUpgrades(){
+		CarPart carPart = new CarPart(); 
+		
+		carPart.upgradeQuality(); 
+		carPart.upgradeQuality(); 
+		carPart.upgradeQuality(); 
+		carPart.upgradeQuality(); 
+		
+		boolean canUpgradeResult = carPart.canUpgrade();
+		
+		assertFalse(canUpgradeResult);
+	}
+	
+	
+	@Test
 	public void testUpgradeQuality(){
 		CarPart carPart = new CarPart();
 		boolean carPartUpgradeStatus; 
@@ -60,4 +83,5 @@ public class CarPartTest {
 		
 		assertFalse(carPartUpgradeStatus); //should fail because quality is already 5
 	}
+	
 }

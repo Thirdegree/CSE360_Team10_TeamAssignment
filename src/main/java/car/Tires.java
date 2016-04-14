@@ -5,8 +5,12 @@ public class Tires {
 	protected int speed;
 	
 	public Tires(){
-		speed = 3; 
 		durability = 3;
+		speed = 3; 		
+	}
+	public Tires(int durability, int speed){
+		this.durability = durability;
+		this.speed = speed; 
 	}
 	
 	public int getDurability() {
@@ -17,7 +21,7 @@ public class Tires {
 		return speed;
 	}
 	
-	public double speedModifier(){
+	public double getSpeedModifier(){
 		return (speed - 3)  * .3;
 	}
 }

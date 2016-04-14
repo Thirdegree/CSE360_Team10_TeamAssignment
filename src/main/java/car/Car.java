@@ -5,103 +5,152 @@ import java.awt.Color;
 /**
  * 
  * @author Joel Christiansen
+ * @author John Rupp
  *
  */
 public class Car {
-	//have an impact on gameplay
+	// Cosmetic/Flavor Attributes
+	private Color color;
+	private String make;
+	private String model;
+		
+	//Gameplay Modifier Attributes
 	private Tires tires;
 	private Turbo turbo;
 	private Suspension suspension;
 	private Engine engine;
 	private Exhaust exhaust;
-	// cosmetics? or flavor at least.
-	private Color color;
-	private String make;
-	private String model;
 	
 
 	public Car() { 
-		tires = new Tires();
-		turbo = new Turbo();
-		suspension = new Suspension();
+		color = new Color(255,255,255);
+		make = "MINI";
+		model = "PACEMAN";
+		
 		engine = new Engine();
 		exhaust = new Exhaust();
+		suspension = new Suspension();
+		tires = new Tires();
+		turbo = new Turbo();
+	}
+	
+	public Car(Color color, String make, String model) { 
+		this.color = color;
+		this.make = make;
+		this.model = model;
 		
+		engine = new Engine();
+		exhaust = new Exhaust();
+		suspension = new Suspension();
+		tires = new Tires();
+		turbo = new Turbo();
 	}
 	
-	public void changeTires(Tires newTire) {
-		tires = newTire;
+	
+	public boolean canUpgradeEngine(){
+		return engine.canUpgrade();
 	}
 	
-	public void upgradeTurbo() {
-		turbo.upgradeQuality();
+	public boolean canUpgradeExhaust(){
+		return exhaust.canUpgrade();
 	}
 	
-	public void upgradeSuspension() {
-		suspension.upgradeQuality();
+	public boolean canUpgradeSuspension(){
+		return suspension.canUpgrade();
 	}
 	
-	public void upgradeEngine() {
-		engine.upgradeQuality();
-	}
-	
-	public void upgradeExaust() {
-		exhaust.upgradeQuality();
+	public boolean canUpgradeTurbo(){
+		return turbo.canUpgrade();
 	}
 
 	
-	public Tires getTires() {
-		return tires;
+	public boolean upgradeEngine() {
+		return engine.upgradeQuality();
 	}
 	
-	public Turbo getTurbo() {
-		return turbo;
+	public boolean upgradeExhaust() {
+		return exhaust.upgradeQuality();
 	}
 	
-	public Suspension getSuspension() {
-		return suspension;
+	public boolean upgradeSuspension() {
+		return suspension.upgradeQuality();
 	}
 	
-	public Engine getEngine() {
-		return engine;
+	public void changeTires(Tires newTires) {
+		tires = newTires;
 	}
 	
-	public Exhaust getExaust() {
-		return exhaust;
+	public boolean upgradeTurbo() {
+		return turbo.upgradeQuality();
 	}
 	
 	
-	public int getSpeedModifier() {
-		
-		//TODO: FIGURE OUT HOW WE WANT TO DO THIS
-		return 1;
+	public int getEngineQuality() {
+		return engine.getQuality();
 	}
+	
+	public int getExhaustQuality() {
+		return exhaust.getQuality();
+	}
+	
+	public int getSuspensionQuality() {
+		return suspension.getQuality();
+	}
+	
+	public int getTireSpeed() {
+		return tires.getSpeed();
+	}
+	
+	public int getTireDurability() {
+		return tires.getDurability();
+	}
+	
+	public int getTurboQuality() {
+		return turbo.getQuality();
+	}
+	
 	
 	public int getDurabilityModifier() {
-		//TODO: FIGURE OUT HOW WE WANT TO DO THIS
-		return 1;
+		return tires.getDurability();
 	}
-
 	
+	public int getGetAwayModifier() {
+		return turbo.getQuality();
+	}
+	
+	public double getRoadHandlingModifier(){
+		return (1 - (suspension.getQuality() * 0.1));
+	}
+	
+	public double getSpeedModifier() {
+		double engineSpdMod = engine.getSpeedModifier();
+		double exhaustSpdMod = exhaust.getSpeedModifier();
+		double tiresSpdMod = tires.getSpeedModifier();
+		
+		return engineSpdMod + exhaustSpdMod + tiresSpdMod;
+	}
+	
+
 	public Color getColor() {
 		return color;
 	}
-	
-	public String getMake() {
-		return make;
-	}
-	
-	public String getModel() {
-		return model;
-	}
-	
 	
 	public void setColor(Color color) {
 		this.color = color;
 	}
 	
+	
+	public String getMake() {
+		return make;
+	}
+	
 	public void setMake(String make) {
 		this.make = make;
+	}
+	
+	
+	public String getModel() {
+		return model;
 	}
 	
 	public void setModel(String model) {
