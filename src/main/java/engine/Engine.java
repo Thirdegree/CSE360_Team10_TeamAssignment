@@ -11,7 +11,12 @@ public class Engine {
 		return quality;
 	}
 	
-	public void upgradeQuality() {
-		quality += (quality < 5) ? 1 : 0;
+	public boolean upgradeQuality() {
+		boolean upgradeSuccess = false; 
+		if (quality < 5){
+			++quality;
+			upgradeSuccess = true;
+		}
+		return upgradeSuccess;
 	}
 }

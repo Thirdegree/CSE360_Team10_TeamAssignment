@@ -30,7 +30,7 @@ public class Car {
 		tire = new AllPurposeTire();
 		turbo = new BaseTurbo();
 		sus = new BaseSuspension();
-		engine = new BaseEngine();
+		engine = new Engine();
 		exaust = new BaseExaust();
 		
 	}
@@ -44,8 +44,8 @@ public class Car {
 	public void upgradeSuspension(Suspension newSus) {
 		sus = newSus;
 	}
-	public void upgradeEngine(Engine newEngine) {
-		engine = newEngine;
+	public void upgradeEngine() {
+		engine.upgradeQuality();
 	}
 	public void upgradeExaust(Exaust newExaust) {
 		exaust = newExaust;
