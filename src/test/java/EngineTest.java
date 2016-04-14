@@ -8,7 +8,22 @@ public class EngineTest {
 
 	@Test
 	public void testGetQuality() {
-		fail("Not yet implemented"); // TODO
+		Engine engine = new Engine();
+		int defaultQuality = engine.getQuality();
+		
+		assertEquals(1, defaultQuality); 
 	}
+	
+	@Test
+	public void testUpgradeQuality(){
+		Engine engine = new Engine();
+		
+		engine.upgradeQuality();
+		
+		int engineQuality = engine.getQuality();
+		
+		assertEquals(2, engineQuality);
+	}
+	
 
 }
