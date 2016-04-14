@@ -2,12 +2,6 @@ package car;
 
 import java.awt.Color;
 
-import engine.*;
-import exaust.*;
-import suspension.*;
-import tire.*;
-import turbo.*;
-
 /**
  * 
  * @author Joel Christiansen
@@ -15,11 +9,11 @@ import turbo.*;
  */
 public class Car {
 	//have an impact on gameplay
-	private Tire tire;
+	private Tires tires;
 	private Turbo turbo;
-	private Suspension sus;
+	private Suspension suspension;
 	private Engine engine;
-	private Exaust exaust;
+	private Exhaust exhaust;
 	// cosmetics? or flavor at least.
 	private Color color;
 	private String make;
@@ -27,71 +21,89 @@ public class Car {
 	
 
 	public Car() { 
-		tire = new AllPurposeTire();
-		turbo = new BaseTurbo();
-		sus = new BaseSuspension();
+		tires = new Tires();
+		turbo = new Turbo();
+		suspension = new Suspension();
 		engine = new Engine();
-		exaust = new BaseExaust();
+		exhaust = new Exhaust();
 		
 	}
-	public void upgradeTire(Tire newTire) {
-		tire = newTire;
-		
+	
+	public void changeTires(Tires newTire) {
+		tires = newTire;
 	}
-	public void upgradeTurbo(Turbo newTurbo) {
-		turbo = newTurbo;
+	
+	public void upgradeTurbo() {
+		turbo.upgradeQuality();
 	}
-	public void upgradeSuspension(Suspension newSus) {
-		sus = newSus;
+	
+	public void upgradeSuspension() {
+		suspension.upgradeQuality();
 	}
+	
 	public void upgradeEngine() {
 		engine.upgradeQuality();
 	}
-	public void upgradeExaust(Exaust newExaust) {
-		exaust = newExaust;
+	
+	public void upgradeExaust() {
+		exhaust.upgradeQuality();
 	}
 
 	
-	public Tire getTire() {
-		return tire;
+	public Tires getTires() {
+		return tires;
 	}
+	
 	public Turbo getTurbo() {
 		return turbo;
 	}
+	
 	public Suspension getSuspension() {
-		return sus;
+		return suspension;
 	}
+	
 	public Engine getEngine() {
 		return engine;
 	}
-	public Exaust getExaust() {
-		return exaust;
+	
+	public Exhaust getExaust() {
+		return exhaust;
 	}
 	
+	
 	public int getSpeedModifier() {
+		
 		//TODO: FIGURE OUT HOW WE WANT TO DO THIS
 		return 1;
 	}
+	
 	public int getDurabilityModifier() {
 		//TODO: FIGURE OUT HOW WE WANT TO DO THIS
 		return 1;
 	}
 
+	
 	public Color getColor() {
 		return color;
 	}
+	
 	public String getMake() {
 		return make;
 	}
+	
 	public String getModel() {
 		return model;
 	}
+	
+	
 	public void setColor(Color color) {
 		this.color = color;
 	}
+	
 	public void setMake(String make) {
 		this.make = make;
 	}
+	
 	public void setModel(String model) {
 		this.model = model;
 	}

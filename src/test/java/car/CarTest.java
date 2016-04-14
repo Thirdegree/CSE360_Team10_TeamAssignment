@@ -1,3 +1,4 @@
+package car;
 import car.Car;
 
 import static org.junit.Assert.*;
