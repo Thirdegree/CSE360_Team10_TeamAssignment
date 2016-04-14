@@ -4,6 +4,8 @@ import org.junit.*;
 
 import car.Car;
 
+//import java.awt.Color;
+
 public class PlayerTest {
 
 	@Test
@@ -63,6 +65,18 @@ public class PlayerTest {
 	public void testVote() {
 		Player myPlayer = new Player("player1");
 		assertEquals(myPlayer.vote(), 1);
+	}
+	
+	@Test
+	public void testUpdateProfile() {
+		Player myPlayer = new Player("player1");
+		myPlayer.updateProfile();
+		// Change user name to Jesus
+		assertEquals(myPlayer.getName(), "Jesus");
+		// Change car make to Plymouth
+		assertEquals(myPlayer.getCurrentCar().getMake(), "Plymouth");
+		// Change car model to Valiant
+		assertEquals(myPlayer.getCurrentCar().getModel(), "Valiant");
 	}
 
 }
