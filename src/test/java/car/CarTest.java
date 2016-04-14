@@ -25,9 +25,9 @@ public class CarTest {
 	@Test
 	public void testChangeTiresToRacing() {
 		Car car = new Car();
-		car.changeTires(new Tires(2,5));
+		car.changeTires(new Tires(1,5));
 		
-		assertEquals(2,car.getDurabilityModifier());
+		assertEquals(-0.8,car.getDurabilityModifier(), (1 * 10^(-15)));
 		assertEquals(0.6, car.getSpeedModifier(), (1 * 10^(-15))); 
 	}
 	
@@ -36,7 +36,7 @@ public class CarTest {
 		Car car = new Car();
 		car.changeTires(new Tires(5,1));
 		
-		assertEquals(5,car.getDurabilityModifier());
+		assertEquals(0.8,car.getDurabilityModifier(), (1 * 10^(-15)));
 		assertEquals(-0.6, car.getSpeedModifier(), (1 * 10^(-15))); 
 	}
 	
@@ -176,10 +176,19 @@ public class CarTest {
 	
 
 	@Test
-	public void testGetTire() {
-		fail("Not yet implemented"); // TODO
+	public void testGetTireDurablilty() {
+		Car car = new Car();
+		
+		assertEquals(3, car.getTireDurability());
 	}
-
+	
+	@Test
+	public void testGetTireSpeed() {
+		Car car = new Car();
+		
+		assertEquals(3, car.getTireSpeed());
+	}
+	
 	
 	@Test
 	public void testGetEngine() {
@@ -209,6 +218,23 @@ public class CarTest {
 		assertEquals(0, car.getTurboQuality());
 	}
 
+	
+	@Test
+	public void testGetDurabilityModifier() {
+		Car car = new Car();
+		
+		car.changeTires(new Tires(1,5));
+		
+		assertEquals(-0.8, car.getDurabilityModifier(), 1*10^(-15));
+	}
+	
+	
+	@Test
+	public void testGetRoadHandlingModifier(){
+		Car car = new Car();
+		
+		assertEquals(0.6, car.getRoadHandlingModifier(), (1 * 10^(-15)));
+	}
 
 	@Test
 	public void testGetSpeedModifierWithNoUpgrades() {
@@ -281,13 +307,6 @@ public class CarTest {
 		assertEquals(0.95, car.getSpeedModifier(), 1*10^(-15));
 	}
 	
-	
-
-	@Test
-	public void testGetDurabilityModifier() {
-		fail("Not yet implemented"); // TODO
-	}
-
 	
 	@Test
 	public void testGetColor() {

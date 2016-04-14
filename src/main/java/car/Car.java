@@ -110,8 +110,8 @@ public class Car {
 	}
 	
 	
-	public int getDurabilityModifier() {
-		return tires.getDurability();
+	public double getDurabilityModifier() {
+		return tires.getDurabilityModifier();
 	}
 	
 	public int getGetAwayModifier() {
@@ -119,7 +119,7 @@ public class Car {
 	}
 	
 	public double getRoadHandlingModifier(){
-		return (1 - (suspension.getQuality() * 0.1));
+		return suspension.getRoadHandlingModifier();
 	}
 	
 	public double getSpeedModifier() {

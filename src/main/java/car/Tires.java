@@ -21,7 +21,12 @@ public class Tires {
 		return speed;
 	}
 	
+	
 	public double getSpeedModifier(){
-		return (speed - 3)  * .3;
+		return (speed - 3)  * 0.3;
+	}
+	
+	public double getDurabilityModifier(){
+		return (durability - 3)  * 0.4;
 	}
 }
