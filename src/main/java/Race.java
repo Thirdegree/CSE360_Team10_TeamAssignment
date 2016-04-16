@@ -8,19 +8,26 @@ public class Race {
 	Die die1;
 	Die die2;
 	ArrayList<Player> players;
-	Map<String, Integer> playerPositions;
+	Map<String, int[]> playerRaceStatus;
 	Player activePlayer;
 	Track track; 
 	boolean raceStarted;
+	boolean raceWon;
 	int raceSlotsLeft;
 	
 	public Race() {
 		die1 = new Die();
 		die2 = new Die();
 		players = new ArrayList<Player>();
-		playerPositions = new HashMap<String, Integer>();
-		raceStarted = false; 
+		playerRaceStatus = new HashMap<String, int[]>();
+		raceStarted = false;
+		raceWon = false;
 		raceSlotsLeft = 12;
+	}
+	
+	public void startRace(Player player, Track track){
+		joinRace(player); 
+		this.track = track;
 	}
 	
 	public boolean joinRace(Player player){
@@ -34,14 +41,31 @@ public class Race {
 		return joinSuccess;
 	}
 	public void addPlayerToRace(Player player){
-		players.add(player);
 		String userName = player.getName();
-	
-		playerPositions.put(userName, new Integer("0"));
+		int[] raceStatuses = setPlayerStatus(0,0);
+		
+		players.add(player);
+		playerRaceStatus.put(userName, raceStatuses);
 	}
+	
+	public int[] setPlayerStatus(int position, int skipStatus){
+		int[] raceStatuses = new int[2];
+		int racePosition = position;
+		int turnsSkipped = skipStatus;
+		
+		raceStatuses[0] = racePosition;
+		raceStatuses[1] = turnsSkipped; 
+		
+		return raceStatuses;
+	}
+	
 	
 	public void startRace(){
 		raceStarted =  true;
+		
+		while (!raceWon){
+			
+		}
 	}
 	
 }
