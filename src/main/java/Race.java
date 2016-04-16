@@ -21,8 +21,7 @@ public class Race {
 	private int raceSlotsLeft;
 	
 	public Race() {
-		die1 = new Die();
-		die2 = new Die();
+		
 		players = new ArrayList<Player>();
 		playerRaceStatus = new HashMap<String, int[]>();
 		raceStarted = false;
@@ -70,15 +69,12 @@ public class Race {
 	
 	public void startRace(){
 		raceStarted =  true;
-		
-		while (!raceWon){
-			
-		}
 	}
 	
 	
 	public void moveCar(Player player, int dieTotal){
 		int usersNewPosition = determineUsersNewPositon(player, dieTotal);
+		raceWon = (usersNewPosition > track.getDistance())?  true : false; 
 		
 		//track.checkForRoadObstruction(usersNewPosition); 
 		//track.userNumberOfTurnsUserSkipped()

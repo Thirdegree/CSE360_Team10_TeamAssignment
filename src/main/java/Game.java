@@ -1,3 +1,6 @@
+import java.awt.Color;
+import java.util.Scanner;
+
 import track.Track;
 
 
@@ -17,11 +20,56 @@ public class Game{
 	
 	
 	public static void main(String[] args){
+		Die die1 = new Die();
+		Die die2 = new Die();
+		
 		Race race = new Race();
 		Player player = new Player("Player");
 		Track track = new Track();
 		
 		race.makeRace(player, track);
+		boolean done = false;
+		try (Scanner userInput = new Scanner(System.in)) {
+			
+			while (!done) {
+				System.out.println("===============================================");
+				System.out.println("\t\tGAME MENU");
+				System.out.println("===============================================");
+				System.out.println("1. MAKE RACE");
+				System.out.println("2. START RACE");
+				System.out.println("3. UPDATE PROFILE");
+				System.out.println("4. MOVE CAR");
+				System.out.println("0. Exit");
+				
+				System.out.print("\nPlease enter a menu option: ");
+				String menuItem = userInput.next();
+				
+				switch(menuItem) {
+				case "1" :
+					race.makeRace(player, track);
+					System.out.print("\nRacing from " + track.getStartLocation() + " to " + track.getEndLocation() + "\n\n1");
+		            break;
+		        case "2" :
+		        	race.startRace();
+		        	System.out.print("Race started.\n\n");
+		            break;
+		        case "3" :
+		        	player.updateProfile();
+		            break;
+		        case "4" :
+		        	int dieTotal = die1.roll() + die2.roll();
+		        	race.moveCar(player, dieTotal);
+		            break;
+		        case "0" :
+		            System.out.println("Exiting.\n");
+		            done = true;
+		            break;
+		        default :
+		            System.out.println("Please try again with a valid number.");
+		            break;
+				}
+			}
+		}
 		
 	}
 	
