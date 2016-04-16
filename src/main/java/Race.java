@@ -2,18 +2,23 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
+import car.Car;
 import track.Track;
 
 public class Race {
-	Die die1;
-	Die die2;
-	ArrayList<Player> players;
-	Map<String, int[]> playerRaceStatus;
-	Player activePlayer;
-	Track track; 
-	boolean raceStarted;
-	boolean raceWon;
-	int raceSlotsLeft;
+	
+	private final int POSITION = 0; 
+	private final int SKIP_STATUS= 0;
+	
+	private Die die1;
+	private Die die2;
+	private ArrayList<Player> players;
+	private Map<String, int[]> playerRaceStatus;
+	private Player activePlayer;
+	private Track track; 
+	private boolean raceStarted;
+	private boolean raceWon;
+	private int raceSlotsLeft;
 	
 	public Race() {
 		die1 = new Die();
@@ -29,7 +34,9 @@ public class Race {
 		joinRace(player); 
 		this.track = track;
 	}
-	
+	public int getRaceSlotsLeft(){
+		return raceSlotsLeft;
+	}
 	public boolean joinRace(Player player){
 		boolean joinSuccess = false;
 		if (raceSlotsLeft > 0){
@@ -40,7 +47,8 @@ public class Race {
 		}
 		return joinSuccess;
 	}
-	public void addPlayerToRace(Player player){
+	
+	private void addPlayerToRace(Player player){
 		String userName = player.getName();
 		int[] raceStatuses = setPlayerStatus(0,0);
 		
@@ -66,6 +74,24 @@ public class Race {
 		while (!raceWon){
 			
 		}
+	}
+	
+	
+	public void moveCar(Player player, int dieTotal){
+		int usersNewPosition = determineUsersNewPositon(player, dieTotal);
+		
+		//track.checkForRoadObstruction(usersNewPosition); 
+		//track.userNumberOfTurnsUserSkipped()
+	}
+	private int determineUsersNewPositon(Player player, int dieTotal){
+		int[] playerStatuses = playerRaceStatus.get(player.getName());
+		Car playersCar = player.getCurrentCar();
+		int speedModifier = (int) (dieTotal * playersCar.getSpeedModifier());
+		int totalPositionGained = dieTotal + speedModifier;
+		
+		playerStatuses[POSITION] += totalPositionGained; 
+		
+		return playerStatuses[POSITION]; 
 	}
 	
 }

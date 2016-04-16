@@ -29,8 +29,7 @@ public class Game{
 	 * 
 	 * @return the value of numVotes
 	 */
-	int getNumVotes()
-	{
+	int getNumVotes(){
 		return numVotes;
 	}
 	
@@ -38,16 +37,14 @@ public class Game{
 	 * Getter for track
 	 * @return the current track
 	 */
-	Track getTrack()
-	{
+	Track getTrack(){
 		return currentTrack;
 	}
 	
 	/**
 	 *  Increments numVotes by one.
 	 */
-	void Vote()
-	{
+	void Vote(){
 		numVotes++;
 	}
 
@@ -57,8 +54,7 @@ public class Game{
 	/**
 	 * Begins the race.
 	 */
-	void startRace()
-	{
+	void startRace(){
 		Race newRace = new Race();
 	}
 }
