@@ -10,9 +10,21 @@ import track.Track;
  * an instance of game can count as one vote towards the game
  */
 public class Game{
+	
 	Track currentTrack;
 	int numPlayers;
 	int numVotes;
+	
+	
+	public static void main(String[] args){
+		Race race = new Race();
+		Player player = new Player("Player");
+		Track track = new Track();
+		
+		race.makeRace(player, track);
+		
+	}
+	
 	
 	/** The initializer for the Game class.
 	 * 

@@ -47,7 +47,6 @@ public class RaceTest {
 		
 		Player player = new Player("Failed Player");
 	
-		
 		assertFalse(race.joinRace(player));
 	}
 

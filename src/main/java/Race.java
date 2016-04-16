@@ -30,7 +30,7 @@ public class Race {
 		raceSlotsLeft = 12;
 	}
 	
-	public void startRace(Player player, Track track){
+	public void makeRace(Player player, Track track){
 		joinRace(player); 
 		this.track = track;
 	}

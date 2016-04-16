@@ -8,7 +8,13 @@ public class Track {
 	
 	private String startLocation;
 	private String endLocation;
-	private int length;
+	private int distance;
+	
+	public Track(){
+		startLocation = "Phoenix, AZ";
+		endLocation = "Austin, TX";
+		distance = 1006;
+	} 
 	
 	public String getStartLocation() {
 		return startLocation;
@@ -16,7 +22,7 @@ public class Track {
 	public String getEndLocation() {
 		return endLocation;
 	}
-	public int getLength() {
-		return length;
+	public int getDistance() {
+		return distance;
 	}
 }
