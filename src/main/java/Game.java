@@ -14,6 +14,11 @@ public class Game{
 	int numPlayers;
 	int numVotes;
 	
+	/** The initializer for the Game class.
+	 * 
+	 * @param numOfPlayers The number of players in the race.
+	 * @param newTrack The track being played
+	 */
 	public Game(int numOfPlayers, Track newTrack)
 	{
 		currentTrack =  newTrack;
@@ -21,16 +26,27 @@ public class Game{
 		numVotes = 0;
 	}
 	
+	/** Getter for numVotes
+	 * 
+	 * @return the value of numVotes
+	 */
 	int getNumVotes()
 	{
 		return numVotes;
 	}
 	
+	/**
+	 * Getter for track
+	 * @return the current track
+	 */
 	Track getTrack()
 	{
 		return currentTrack;
 	}
 	
+	/**
+	 *  Increments numVotes by one.
+	 */
 	void Vote()
 	{
 		numVotes++;
@@ -38,6 +54,9 @@ public class Game{
 	///Think about making Race static, so all players can interact and so each can use
 	///race even if it is created by Game
 	///player.game.race._______________
+	/**
+	 * Begins the race.
+	 */
 	void startRace()
 	{
 		Race newRace = new Race(currentTrack,numPlayers);
