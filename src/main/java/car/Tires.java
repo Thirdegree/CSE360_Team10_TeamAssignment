@@ -17,8 +17,8 @@ public class Tires {
 	 * @param speed tire speed
 	 */
 	public Tires(int durability, int speed){
-		this.durability = durability;
-		this.speed = speed; 
+		setDurability(durability);
+		setSpeed(speed); 
 	}
 	
 	/**
@@ -35,6 +35,33 @@ public class Tires {
 	 */
 	public int getSpeed() {
 		return speed;
+	}
+	
+	
+	/**
+	 * Sets the tire's durability modifier
+	 * @param durability the durability
+	 * @throws IllegalArgumentException 
+	 */
+	public void setDurability(int durability) throws IllegalArgumentException{
+		if ((durability < 1 ) || (durability > 5)){
+			throw new IllegalArgumentException();
+		} 
+		
+		this.durability = durability;
+	}
+	
+	/**
+	 * Set's the tire's speed
+	 * @param speed the speed
+	 * @throws IllegalArgumentException
+	 */
+	public void setSpeed(int speed) throws IllegalArgumentException{
+		if ((speed < 1) || (speed > 5)){
+			throw new IllegalArgumentException();
+		} 
+		
+		this.speed = speed;
 	}
 	
 	

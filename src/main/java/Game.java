@@ -19,8 +19,7 @@ public class Game{
 	 * @param numOfPlayers The number of players in the race.
 	 * @param newTrack The track being played
 	 */
-	public Game(int numOfPlayers, Track newTrack)
-	{
+	public Game(int numOfPlayers, Track newTrack){
 		currentTrack =  newTrack;
 		numPlayers = numOfPlayers;
 		numVotes = 0;
@@ -51,6 +50,7 @@ public class Game{
 	{
 		numVotes++;
 	}
+
 	///Think about making Race static, so all players can interact and so each can use
 	///race even if it is created by Game
 	///player.game.race._______________
@@ -59,6 +59,6 @@ public class Game{
 	 */
 	void startRace()
 	{
-		Race newRace = new Race(currentTrack,numPlayers);
+		Race newRace = new Race();
 	}
 }

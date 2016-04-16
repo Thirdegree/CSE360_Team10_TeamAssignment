@@ -8,6 +8,12 @@ import org.junit.Test;
 public class CarPartTest {
 
 	@Test
+	public void testCarPart(){
+		CarPart carPart = new CarPart();
+		assertNotNull(carPart);
+	}
+	
+	@Test
 	public void testGetQuality() {
 		CarPart carPart = new CarPart();
 		int defaultQuality = carPart.getQuality();

@@ -8,6 +8,12 @@ import car.Exhaust;
 public class ExhaustTest {
 	
 	@Test
+	public void testExhaust(){
+		Exhaust exhaust = new Exhaust();
+		assertNotNull(exhaust);
+	}
+	
+	@Test
 	public void testGetSpeedModifierWithNoUpgrades(){
 		Exhaust exhaust = new Exhaust();
 		double speedModifier = exhaust.getSpeedModifier();

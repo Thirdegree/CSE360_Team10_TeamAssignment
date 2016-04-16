@@ -36,6 +36,10 @@ public class Die {
 	public int getNumberOfSides() {
 		return numberOfSides;
 	}
+	/**
+	 * Generates random die roll and return face value
+	 * @return face value of random die roll
+	 */
 	public int roll() {
 		Random rand = new Random(); 
 		
