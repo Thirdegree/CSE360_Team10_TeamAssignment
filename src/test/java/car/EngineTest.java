@@ -5,7 +5,12 @@ import static org.junit.Assert.*;
 import org.junit.Test;
 
 public class EngineTest {
-	//TODO
+	
+	@Test
+	public void testEngine(){
+		Engine engine = new Engine();
+		assertNotNull(engine);
+	}
 	
 	@Test
 	public void testGetSpeedModifierWithNoUpgrades(){

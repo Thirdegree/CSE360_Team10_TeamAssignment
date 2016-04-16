@@ -14,32 +14,27 @@ public class Game{
 	int numPlayers;
 	int numVotes;
 	
-	public Game(int numOfPlayers, Track newTrack)
-	{
+	public Game(int numOfPlayers, Track newTrack){
 		currentTrack =  newTrack;
 		numPlayers = numOfPlayers;
 		numVotes = 0;
 	}
 	
-	int getNumVotes()
-	{
+	int getNumVotes(){
 		return numVotes;
 	}
 	
-	Track getTrack()
-	{
+	Track getTrack(){
 		return currentTrack;
 	}
 	
-	void Vote()
-	{
+	void Vote(){
 		numVotes++;
 	}
 	///Think about making Race static, so all players can interact and so each can use
 	///race even if it is created by Game
 	///player.game.race._______________
-	void startRace()
-	{
-		Race newRace = new Race(currentTrack,numPlayers);
+	void startRace(){
+		Race newRace = new Race();
 	}
 }
