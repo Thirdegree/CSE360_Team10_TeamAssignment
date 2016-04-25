@@ -79,11 +79,13 @@ public class Practice {
 		frame.getContentPane().add(btnRollDie);
 		
 		JTextArea txtrDisplayCurrentPositions = new JTextArea();
+		txtrDisplayCurrentPositions.setEditable(false);
 		txtrDisplayCurrentPositions.setText("Display Current Positions Here");
 		txtrDisplayCurrentPositions.setBounds(180, 10, 244, 125);
 		frame.getContentPane().add(txtrDisplayCurrentPositions);
 		
 		txtFaceValueOf = new JTextField();
+		txtFaceValueOf.setEditable(false);
 		txtFaceValueOf.setText("Face Value of Die: ");
 		txtFaceValueOf.setAlignmentY(-45);
 		txtFaceValueOf.setBounds(10, 45, 137, 90);
@@ -91,6 +93,7 @@ public class Practice {
 		txtFaceValueOf.setColumns(10);
 		
 		txtUpgrade = new JTextField();
+		txtUpgrade.setEditable(false);
 		txtUpgrade.setText("Upgrade?");
 		txtUpgrade.setBounds(263, 146, 86, 20);
 		frame.getContentPane().add(txtUpgrade);
