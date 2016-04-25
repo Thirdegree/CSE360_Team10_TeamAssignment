@@ -13,12 +13,16 @@ import java.awt.event.ActionEvent;
 import java.awt.Canvas;
 import javax.swing.JTextArea;
 import javax.swing.JComboBox;
+import javax.swing.JLabel;
 
 public class Practice {
 
 	private JFrame frame;
 	private JTextField txtFaceValueOf;
 	private JTextField txtUpgrade;
+	
+	private Die die1 = new Die();
+	private int roll1 = 0;
 
 	/**
 	 * Launch the application.
@@ -63,6 +67,14 @@ public class Practice {
 		splitPane.setRightComponent(btnUpgrade);
 		
 		JButton btnRollDie = new JButton("Roll Die");
+		btnRollDie.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				//die1 = new Die();
+				//roll1 = die1.roll();
+				roll1 = die1.roll();
+				txtFaceValueOf.setText("Face Value of Die: " + roll1);
+			}
+		});
 		btnRollDie.setBounds(10, 11, 89, 23);
 		frame.getContentPane().add(btnRollDie);
 		
@@ -72,7 +84,8 @@ public class Practice {
 		frame.getContentPane().add(txtrDisplayCurrentPositions);
 		
 		txtFaceValueOf = new JTextField();
-		txtFaceValueOf.setText("Face Value of Die");
+		txtFaceValueOf.setText("Face Value of Die: ");
+		txtFaceValueOf.setAlignmentY(-45);
 		txtFaceValueOf.setBounds(10, 45, 137, 90);
 		frame.getContentPane().add(txtFaceValueOf);
 		txtFaceValueOf.setColumns(10);
