@@ -1,12 +1,13 @@
 # CSE360 Team Assignment ![Build Status](https://travis-ci.org/jcrupp/CSE360_Team10_TeamAssignment.svg?branch=master) 
 
 ##Team 10 Members: 
-
-- Joel Christiansen
-- Julian Cruze-Miranda
-- Jess Fernandez
-- Jesus Ramirez
-- John Rupp
+|         Names        | GithubID   |
+|:--------------------:|------------|
+| Joel Christiansen    | Thirdegree |
+| Julian Cruze-Miranda |            |
+| Jess Fernandez       |            |
+| Jesus Ramirez        |            |
+| John Rupp            |            |
 
 ##Game Description
 **Working Title: CSE360 Rally**
