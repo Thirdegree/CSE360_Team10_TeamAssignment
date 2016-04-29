@@ -7,7 +7,7 @@
 | Julian Cruze-Miranda |            |
 | Jess Fernandez       |            |
 | Jesus Ramirez        |            |
-| John Rupp            |            |
+| John Rupp            |   jcrupp   |
 
 ##Game Description
 **Working Title: CSE360 Rally**
