@@ -33,11 +33,13 @@ public class RallyGame{
 				System.out.println("2. Main Menu ");
 				System.out.println("3. Create New Profile Menu");
 				System.out.println("4. Update Profile Menu");
+				System.out.println("5. Update Car Menu");
 				System.out.println("0. Exit");
 				
 				System.out.print("\nPlease enter a menu option: ");
 				String menuItem = userInput.next();
 				
+				Player testPlayer = new Player("test");
 				switch(menuItem) {
 				case "1" :
 					Login loginForm = new Login();
@@ -52,9 +54,12 @@ public class RallyGame{
 		        	gw.updateWindowContent(profileMenu.getFormPanel());
 		            break;
 		        case "4" :
-		        	Player testPlayer = new Player("test");
 		        	Profile updateProfileMenu = new Profile(testPlayer);
 		        	gw.updateWindowContent(updateProfileMenu.getFormPanel());
+		            break;
+		        case "5" :
+		        	UpgradeCar upgradeCarMenu = new UpgradeCar(testPlayer);
+		        	gw.updateWindowContent(upgradeCarMenu.getFormPanel());
 		            break;
 		        case "0" :
 		            System.out.println("Exiting.\n");

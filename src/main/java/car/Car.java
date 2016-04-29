@@ -56,6 +56,18 @@ public class Car {
 		turbo = new Turbo();
 	}
 	
+	public Car(Car car){
+		this.color = car.getColor();
+		this.make = car.getMake();
+		this.model = car.getModel();
+		
+		engine = car.engine;
+		exhaust = car.exhaust;
+		suspension = car.suspension;
+		tires = car.tires;
+		turbo = car.turbo;
+	}
+	
 	
 	/** Checks if the engine can be upgraded
 	 * 
