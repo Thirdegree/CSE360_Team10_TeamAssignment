@@ -24,6 +24,7 @@ public class Profile {
 	public Profile(){
 		formPanel = new JPanel(new GridBagLayout());
 		formDescriptionText = "Welcome to the create a profile page!!!\n\nPlease enter in your desired username and password.";
+		username = ""; 
 	}
 	
 	public Profile(Player player){
@@ -67,6 +68,7 @@ public class Profile {
 		JLabel userNamePrompt = new JLabel("username");
 		userNameFields.add(userNamePrompt);
 		JTextField userName = new JTextField(10);
+		userName.setText(username);
 		userNameFields.add(userName);
 		formPanel.add(userNameFields, gbConstr2);
 	}
