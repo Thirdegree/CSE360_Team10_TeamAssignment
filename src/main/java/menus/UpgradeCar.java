@@ -16,6 +16,7 @@ import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
 import car.Car;
+import car.Tires;
 import player.Player;
 
 public class UpgradeCar  {
@@ -38,7 +39,10 @@ public class UpgradeCar  {
 		setupExhaustUpgrateFields();
 		setupSuspensionUpgrateFields();
 		setupSubmissionButtons();
+		setupChangeTiresFields();
+		setupTurboUpgrateFields();
 		
+		formPanel.validate();
 		return formPanel;
 	}
 	
@@ -136,7 +140,7 @@ public class UpgradeCar  {
 		JButton upgradeSuspension = new JButton("Upgrade Suspension?");
 		
 		upgradeSuspension.setEnabled(true);
-		if (!newCar.canUpgradeExhaust ()){
+		if (!newCar.canUpgradeSuspension()){
 			upgradeSuspension.setEnabled(false);
 		}
 		
@@ -153,18 +157,91 @@ public class UpgradeCar  {
 		formPanel.add(carSuspensionFields, gbConstr);
 	}
 	
-	private GridBagConstraints createGridBagConstriants(int gridx, int gridy, int gridwidth, int gridheight){
-		GridBagConstraints gbConstr = new GridBagConstraints();
+	private void setupChangeTiresFields(){
+		GridBagConstraints gbConstr = createGridBagConstriants(0,8,1,1);
+		GridBagConstraints gbConstrTiresPrompt = createGridBagConstriants(0,1,1,1);
+		GridBagConstraints gbConstrTiresButtons = createGridBagConstriants(0,2,1,1);
+		JPanel carTiresFields = new JPanel(new GridBagLayout());
+		JLabel carTiresPrompt = new JLabel("Please select desired tires: ");
 		
-		gbConstr.gridx = gridx;
-		gbConstr.gridy = gridy;
-		gbConstr.gridwidth = gridwidth;
-		gbConstr.gridheight = gridheight;
+		JPanel tireButtonFields = new JPanel(new FlowLayout());
+		JButton DurableTires = new JButton("Durable Tires");
+		JButton AllPurposeTires = new JButton("All Purpose Tires");
+		JButton RacingTires = new JButton("Racing Tires");
 		
-		return gbConstr;
 		
+		if (newCar.getTireDurability() == 5 && newCar.getTireSpeed() == 1){
+			DurableTires.setEnabled(false);
+		} else if(newCar.getTireDurability() == 3 && newCar.getTireSpeed() == 3){
+			AllPurposeTires.setEnabled(false);
+		} else {
+			RacingTires.setEnabled(false);
+		}
+		
+		DurableTires.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Tires newTires = new Tires(5,1);
+				newCar.changeTires(newTires);
+				DurableTires.setEnabled(false);
+				AllPurposeTires.setEnabled(true);
+				RacingTires.setEnabled(true);
+			}
+		});
+		
+		AllPurposeTires.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Tires newTires = new Tires(3,3);
+				newCar.changeTires(newTires);
+				DurableTires.setEnabled(true);
+				AllPurposeTires.setEnabled(false);
+				RacingTires.setEnabled(true);
+			}
+		});
+		
+		RacingTires.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Tires newTires = new Tires(1,5);
+				newCar.changeTires(newTires);
+				DurableTires.setEnabled(true);
+				AllPurposeTires.setEnabled(true);
+				RacingTires.setEnabled(false);
+			}
+		});
+		
+		tireButtonFields.add(DurableTires);
+		tireButtonFields.add(AllPurposeTires);
+		tireButtonFields.add(RacingTires);
+		
+		
+		carTiresFields.add(carTiresPrompt, gbConstrTiresPrompt);
+		carTiresFields.add(tireButtonFields, gbConstrTiresButtons);
+		
+		formPanel.add(carTiresFields, gbConstr);
 	}
 	
+	private void setupTurboUpgrateFields(){
+		GridBagConstraints gbConstr = createGridBagConstriants(0,7,1,1);
+		JPanel carTurboFields = new JPanel(new FlowLayout());
+		JLabel carTurboPrompt = new JLabel("Car Turbo Status: " + newCar.getTurboQuality());
+		JButton upgradeTurbo = new JButton("Upgrade Turbo?");
+		
+		upgradeTurbo.setEnabled(true);
+		if (!newCar.canUpgradeTurbo()){
+			upgradeTurbo.setEnabled(false);
+		}
+		
+		upgradeTurbo.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				newCar.upgradeTurbo();
+				carTurboPrompt.setText("Car Turbo Status: " + newCar.getTurboQuality());
+			}
+		});
+		
+		carTurboFields.add(carTurboPrompt);
+		carTurboFields.add(upgradeTurbo);
+		
+		formPanel.add(carTurboFields, gbConstr);
+	}
 	
 	
 	private void setupSubmissionButtons(){
@@ -179,4 +256,21 @@ public class UpgradeCar  {
 		
 		formPanel.add(submissionButtons, gbConstr);
 	}
+	
+	
+	private GridBagConstraints createGridBagConstriants(int gridx, int gridy, int gridwidth, int gridheight){
+		GridBagConstraints gbConstr = new GridBagConstraints();
+		
+		gbConstr.gridx = gridx;
+		gbConstr.gridy = gridy;
+		gbConstr.gridwidth = gridwidth;
+		gbConstr.gridheight = gridheight;
+		
+		return gbConstr;
+		
+	}
+	
+	
+	
+	
 }

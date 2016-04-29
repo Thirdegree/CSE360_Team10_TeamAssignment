@@ -36,5 +36,6 @@ public class GameWindow {
 	public void updateWindowContent(JPanel panel) {
 		frame.setContentPane(panel);
 		frame.validate(); 
+		frame.pack();
 	}
 }
