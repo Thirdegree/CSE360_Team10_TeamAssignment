@@ -6,7 +6,7 @@
 | Joel Christiansen    | Thirdegree |
 | Julian Cruze-Miranda |            |
 | Jess Fernandez       |            |
-| Jesus Ramirez        |            |
+| Jesus Ramirez        | hayzoos81  |
 | John Rupp            |   jcrupp   |
 
 ##Game Description
